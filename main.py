@@ -1,14 +1,20 @@
-class Animals():
-    def __init__(self,weight,height,age, sex,speed,jump):
-        self.weight = weight
-        self.height = height
-        self.age = age
-        self.sex = sex
-        self.speed = speed
-        self.jump = jump
-    def walk(self):
-        print('Скорость ходьбы животного', self.speed)
-Rabbit = Animals (weight=80, height = 213, sex='male', age=9, speed = 2, jump = 1)
-print(Rabbit.age)
-print(Rabbit.jump)
-Rabbit.walk()
+import math
+
+print("(Введите коэффициенты для уравнения)")
+print("ax^2 + bx + c = 0:")
+a = float(input("a = "))
+b = float(input("b = "))
+c = float(input("c = "))
+
+discr = b ** 2 - 4 * a * c
+print("Дискриминант D = %.2f" % discr)
+
+if discr > 0:
+    x1 = (-b + math.sqrt(discr)) / (2 * a)
+    x2 = (-b - math.sqrt(discr)) / (2 * a)
+    print("x1 = %.2f \nx2 = %.2f" % (x1, x2))
+elif discr == 0:
+    x = -b / (2 * a)
+    print("x = %.2f" % x)
+else:
+    print("(Корней нет)")
